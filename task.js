@@ -55,8 +55,12 @@ const findPrimeNumber = (numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) => {
     }
     return true;
   };
-
-  const primeNumbers = numberArr.filter((num) => isPrime(num));
+  if (typeof numberArr == "object") {
+    const primeNumbers = numberArr.filter((num) => isPrime(num));
+    console.log("Prime Numbers: ", primeNumbers);
+    return primeNumbers;
+  }
+  const primeNumbers = isPrime(numberArr) ? numberArr : "";
   console.log("Prime Numbers: ", primeNumbers);
   return primeNumbers;
 };
@@ -81,9 +85,9 @@ const findSecondLowestAndHighest = (arr = [1, 2, 3, 4, 5, 6, 7, 8]) => {
   }
   const sortNum = arr.sort((a, b) => b - a);
   console.log("Lowest Value: ", sortNum[1]);
-  console.log("Highest Value: ", sortNum[arr.length -2]);
+  console.log("Highest Value: ", sortNum[arr.length - 2]);
 
-  return { lowest: sortNum[1], highest: sortNum[arr.length -2] };
+  return { lowest: sortNum[1], highest: sortNum[arr.length - 2] };
 };
 findSecondLowestAndHighest();
 
