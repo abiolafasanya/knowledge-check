@@ -1,7 +1,9 @@
-console.log("I'm Abiola Fasanya and this is my solution")
-console.log("Beginning of solution")
-console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-console.log()
+console.log("I'm Abiola Fasanya and this is my solution");
+console.log("Beginning of solution");
+console.log(
+  "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+);
+console.log();
 // Assessent One ✅
 // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word into upper case.
 const capWordsLetters = (input = "prof is doing well!") => {
@@ -70,34 +72,23 @@ const findArgType = (arg) => {
 };
 findArgType();
 
-
 // Assessent Five ✅
 // Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest numbers, respectively.
-const findLowestAndHighestValue = (arr = [1, 2, 3, 4, 5, 6, 7, 8]) => {
+const findSecondLowestAndHighest = (arr = [1, 2, 3, 4, 5, 6, 7, 8]) => {
   if (arr.length === 0) {
     console.log("Array is empty.");
     return { lowest: undefined, highest: undefined };
   }
+  const sortNum = arr.sort((a, b) => b - a);
+  console.log("Lowest Value: ", sortNum[1]);
+  console.log("Highest Value: ", sortNum[arr.length -2]);
 
-  let lowest = arr[0];
-  let highest = arr[0];
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < lowest) {
-      lowest = arr[i];
-    }
-    if (arr[i] > highest) {
-      highest = arr[i];
-    }
-  }
-
-  console.log("Lowest Value: ", lowest);
-  console.log("Highest Value: ", highest);
-
-  return { lowest, highest };
+  return { lowest: sortNum[1], highest: sortNum[arr.length -2] };
 };
+findSecondLowestAndHighest();
 
-findLowestAndHighestValue();
-console.log()
-console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-console.log('Solution End!')
+console.log();
+console.log(
+  "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+);
+console.log("Solution End!");
